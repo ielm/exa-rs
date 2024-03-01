@@ -1,13 +1,9 @@
-pub fn hello_exa() -> &'static str {
-    "Hello, Exa!"
-}
+pub mod client;
+pub mod constants;
+pub mod types;
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+pub use client::Exa;
 
-    #[test]
-    fn test_hello_exa() {
-        assert_eq!(hello_exa(), "Hello, Exa!");
-    }
+pub trait ExaRequest {
+    fn as_json(&self) -> serde_json::Value;
 }

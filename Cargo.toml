@@ -6,10 +6,12 @@ edition = "2021"
 [dependencies]
 bytes = "1.5.0"
 chrono = { version = "0.4.33", default-features = false, features = ["serde"] }
-reqwest = { version = "0.11.24", default-features = false, features = [
-    "json",
-    "stream",
-] }
+reqwest = { version = "0.11.24", default-features = false, features = ["json", "stream"] }
 tokio = { version = "1.36.0", features = ["full"] }
 serde = { version = "1.0.197", features = ["derive"] }
 serde_urlencoded = "0.7.1"
+url = { version = "2.5.0", features = ["serde"] }
+serde_json = "1.0.114"
+hyper-tls = "0.6.0"
+opentelemetry-otlp = { version = "0.15.0", features = ["reqwest-rustls"] }
+dotenvy = "0.15.7"
